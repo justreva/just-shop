@@ -1,0 +1,130 @@
+.cart__page {
+  text-align: center;
+  margin-top: 50px;
+  padding: 0px 40px;
+
+}
+
+.cart__content {
+  margin-top: 50px;
+  margin: 40px 50px;
+	display: flex;
+	justify-content: center;
+}
+
+.cart__content h1 {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.cart__list {
+  display: flex;
+	flex-direction: column;
+  margin-top: 20px;
+  list-style-type: none;
+  padding: 0px;
+}
+.cart__item {
+  display: flex;
+  padding: 10px;
+  border: #aaa 1px solid;
+
+}
+.cart__item:not(:first-child){
+	margin-top: 20px;
+}
+.item__image {
+  width: 100px;
+  height: 100px;
+
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+.item__image img {
+  width: 70px;
+  height: 90px;
+}
+.item__info {
+  text-align: start;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.item__category {
+  color: #aaa;
+  font-size: 12px;
+}
+.item__name {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.item__price{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.item__price span{
+	font-size: 14px;
+	font-weight: 500;
+}
+.item__delete{
+	align-self: flex-end;
+	border: none;
+  background-color: rgb(156, 33, 11);
+	color: white;
+	padding: 3px 10px ;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 600;
+	transition: background-color 0.1s ease-in-out;
+}
+
+.item__delete:hover{
+  background-color: rgb(110, 2, 2);
+}
+
+.item__amount button{
+	color: white;
+	border: none;
+	background-color: rgb(35, 123, 255);
+	padding: 2px 6px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.1s ease-in-out;
+}
+.item__amount button:first-child{
+	margin-right: 1px;
+}
+.item__amount button:last-child{
+	margin-left: 1px;
+}
+
+.item__amount button:hover{
+	background-color: rgb(11, 90, 209);
+}
+
+.item__amount input{
+	max-width: 30px;
+	text-align: center;
+	border: #aaa 1px solid;
+	font-size: 14px;
+	font-weight: 400;
+	padding:3px 10px; 
+	border-radius: 5px;
+
+}
+
+.main{
+margin-right: 10px;
+}
+
+.empty{
+	font-size: 30px;
+	color: rgb(156, 33, 11);
+	font-weight: 600;
+}
