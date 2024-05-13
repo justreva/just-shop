@@ -53,7 +53,12 @@
 	border-radius: 5px;
 	cursor: pointer;
 	transition: all 0.2s ease;
+  padding: 0;
 }
-.product__buy button:hover{
+.buy:hover{
 	color:rgb(35, 123, 255);
+}
+
+.info:hover{
+  color: rgb(76, 0, 255);
 }

@@ -1,4 +1,4 @@
-import { PlusCircle } from "phosphor-react";
+import { PlusCircle, Info } from "phosphor-react";
 import { CartContext } from "../../context/CartContext";
 import { useContext } from "react";
 export const Product = ({ product }) => {
@@ -20,7 +20,11 @@ export const Product = ({ product }) => {
 
       <div className="product__buy">
         <span className="product__price">{product.price}$</span>
-        <button onClick={() => addToCart(product, product.id)}><PlusCircle size={24}/></button>
+        <div className="product__buy-btns">
+        <button className="buy" onClick={() => addToCart(product, product.id)}><PlusCircle size={24}/></button>
+        <button className="info"><Info size={24} /></button>
+        </div>
+        
       </div>
     </div>
   );

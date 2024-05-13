@@ -2,7 +2,7 @@ import "./Cart.css";
 import { CartContext } from "../../context/CartContext";
 import { useContext } from "react";
 import { CartProduct } from "./CartProduct";
-
+import { Trash } from "phosphor-react";
 export const Cart = () => {
   const { cart } = useContext(CartContext);
 
@@ -26,6 +26,12 @@ export const Cart = () => {
           )}
         </ul>
       </div>
+      {cart.length > 0 && (
+        <div className="cart__total">
+          <span className="total__price">Total: 100$</span>
+          <Trash size={32} />
+        </div>
+      )}
     </div>
   );
 };

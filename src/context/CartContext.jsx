@@ -1,28 +1,70 @@
-import { createContext, useEffect, useState } from "react";
-import { findDOMNode } from "react-dom";
+import { createContext, useState } from "react";
 
 export const CartContext = createContext([]);
 
-export  const CartProvider = ({ children }) => {
-	const [cart, setCart] = useState([]);
+export const CartProvider = ({ children }) => {
+  const [cart, setCart] = useState([]);
+  const amountItems =
+    cart.length === 0
+      ? 0
+      : cart.reduce((amount, item) => amount + item.amount, 0);
 
-	const amountItems = cart.reduce((amount, item) => amount + item.amount, 0);
-	const addToCart = (product ,id) => {
-		const newItem = {...product, amount: 1 };
-		const findItem = cart.find(item => item.id === id);
-		if(findItem){
-			setCart(cart.map(item => item.id === id? {...item, amount: item.amount + 1} : item));
-		}
-		else{
-			console.log("item added")
-			setCart([...cart, newItem]);
-		}
-		console.log(cart);
-	}
+  const addToCart = (product, id) => {
+    const newItem = { ...product, amount: 1 };
+    const findItem = cart.find((item) => item.id === id);
+    if (findItem) {
+      setCart(
+        cart.map((item) =>
+          item.id === id ? { ...item, amount: item.amount + 1 } : item
+        )
+      );
+    } else {
+      setCart([...cart, newItem]);
+    }
+  };
+
+  const removeFromCart = (id) => {
+    const removedCart = cart.filter((item) => item.id !== id);
+    setCart(removedCart);
+  };
+
+  const handleClick = (e, operation, id) => {
+    e.preventDefault();
+    if (operation === "increment") {
+      setCart(
+        cart.map((item) => {
+          return item.id === id ? { ...item, amount: item.amount + 1 } : item;
+        })
+      );
+    } else if (operation === "dicrement") {
+      const cartItem = cart.find((item) => item.id === id);
+      if (cartItem) {
+        const newCart = cart.map((item) => {
+          return item.id === id
+            ? { ...item, amount: cartItem.amount - 1 }
+            : item;
+        });
+        setCart(newCart);
+      }
+      if (cartItem.amount < 2) {
+        removeFromCart(id);
+      }
+    }
+  };
+
 
   return (
-    <CartContext.Provider value={{ cart, setCart, addToCart, amountItems }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        setCart,
+        addToCart,
+        removeFromCart,
+        amountItems,
+        handleClick,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
-}
+};
