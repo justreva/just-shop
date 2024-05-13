@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { CartProduct } from "./CartProduct";
 import { Trash } from "phosphor-react";
 export const Cart = () => {
-  const { cart } = useContext(CartContext);
+  const { cart, totalCost, removeAllCart } = useContext(CartContext);
 
   return (
     <div className="cart__page">
@@ -28,8 +28,8 @@ export const Cart = () => {
       </div>
       {cart.length > 0 && (
         <div className="cart__total">
-          <span className="total__price">Total: 100$</span>
-          <Trash size={32} />
+          <span className="total__price">Total: {totalCost().toFixed()}$</span>
+          <Trash size={32} className="delete__cart" onClick={removeAllCart}/>
         </div>
       )}
     </div>

@@ -52,6 +52,19 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  const totalCost = () => {
+    let sum = 0
+    const cost = cart.map(item => {
+      sum += item.price * item.amount ;
+      return sum
+    })
+    return cost.reduce((acc, elem) => acc + elem, 0)
+  }
+
+  const removeAllCart = () => {
+    setCart([])
+  }
+
 
   return (
     <CartContext.Provider
@@ -62,6 +75,8 @@ export const CartProvider = ({ children }) => {
         removeFromCart,
         amountItems,
         handleClick,
+        totalCost,
+        removeAllCart
       }}
     >
       {children}

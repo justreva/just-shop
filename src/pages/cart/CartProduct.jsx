@@ -18,7 +18,7 @@ export const CartProduct = ({ product }) => {
 
         <div className="item__price">
           <div className="main">
-            <span>{(product.price * product.amount).toFixed(1)}$</span>
+            <span>{(product.price * product.amount).toFixed()}$</span>
 
             <div className="item__amount">
               <button onClick={(e) => handleClick(e, "dicrement", product.id)}>

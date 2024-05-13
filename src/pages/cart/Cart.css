@@ -30,6 +30,7 @@
   display: flex;
   padding: 10px;
   border: #aaa 1px solid;
+  width: 450px;
 }
 .cart__item:not(:first-child) {
   margin-top: 20px;
@@ -49,6 +50,7 @@
   height: 90px;
 }
 .item__info {
+  width: 100%;
   text-align: start;
   display: flex;
   flex-direction: column;
@@ -61,6 +63,7 @@
 .item__name {
   font-weight: 500;
   font-size: 14px;
+
 }
 
 .item__price {
@@ -111,6 +114,7 @@
   padding: 2px 20px;
   border-top: 1px solid #aaa;
 	border-bottom: 1px solid #aaa;
+  font-size: 12px;
 }
 
 .main {
@@ -130,9 +134,17 @@
   background-color: black;
   color: white;
   width: 400px;
-  padding: 5px 15px;
+  padding: 15px 45px;
+  border-radius: 5px;
 }
 .total__price{
   font-size: 16px;
   font-weight: 500;
+}
+.delete__cart{
+  cursor: pointer;
+  transition: color 0.1s;
+  }
+.delete__cart:hover{
+  color: rgb(156, 33, 11);
 }
