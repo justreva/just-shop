@@ -3,7 +3,7 @@ import { CartContext } from "../../context/CartContext";
 import { useContext } from "react";
 import { CartProduct } from "./CartProduct";
 import { Trash } from "phosphor-react";
-export const Cart = () => {
+const Cart = () => {
   const { cart, totalCost, removeAllCart } = useContext(CartContext);
 
   return (
@@ -35,3 +35,5 @@ export const Cart = () => {
     </div>
   );
 };
+
+export default Cart;
