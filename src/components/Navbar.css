@@ -27,18 +27,18 @@
 .cart {
   margin-left: auto;
   color: white;
-	font-size: 30px;
+  font-size: 30px;
   text-decoration: none;
   position: relative;
 }
-.cart__icon{
+.cart__icon {
   transition: all 0.2s;
 }
-.cart__icon:hover{
+.cart__icon:hover {
   color: rgb(35, 123, 255);
 }
 
-.cart__amount{
+.cart__amount {
   position: absolute;
   left: 50%;
   top: 0%;
